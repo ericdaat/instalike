@@ -71,12 +71,7 @@
 
                     <div class="card-columns">
                         {% for post in user.posts %}
-                            {% include "components/modal_post.html" %}
-                            <div class="card">
-                                <a data-toggle="modal" data-target="#modalPost{{post.id}}">
-                                    <img class="card-img-top" src="{{post.picture}}">
-                                </a>
-                            </div>
+                            {% include "components/post_picture_only.html" %}
                         {% endfor %}
                     </div>
 
@@ -87,7 +82,9 @@
                     <div class="row justify-content-md-center">
                         <div class="col-8">
                             {% for post in user.posts %}
-                                {% include 'components/post.html' %}
+                                <div class="mb-3">
+                                    {% include 'components/post_long.html' %}
+                                </div>
                             {% endfor %}
                         </div>
                     </div>
@@ -98,7 +95,9 @@
                     <div class="row justify-content-md-center">
                         <div class="col-8">
                             {% for post in user.likes %}
-                                {% include 'components/post.html' %}
+                                <div class="mb-3">
+                                    {% include 'components/post_long.html' %}
+                                </div>
                             {% endfor %}
                         </div>
                     </div>

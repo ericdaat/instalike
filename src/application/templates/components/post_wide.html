@@ -1,0 +1,26 @@
+{% include "components/modal_likes.html" %}
+
+<div class="card rounded-sm">
+    <div class="card-header bg-white">
+        {% include "components/post/header.html" %}
+    </div>
+
+    <div class="row">
+
+        <div class="col-6">
+            {% include "components/post/picture.html" %}
+        </div>
+
+        <div class="col-6">
+            <div class="card-body">
+                {% include "components/post/reactions.html" %}
+                {% include "components/post/comments.html" %}
+            </div>
+        </div>
+
+    </div>
+
+    <div class="card-footer bg-white">
+        {% include "components/post/footer.html" %}
+    </div>
+</div>

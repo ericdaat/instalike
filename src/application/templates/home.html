@@ -10,7 +10,9 @@
 
         <div class="col-8">
             {% for post in posts %}
-                {% include 'components/post.html' %}
+                <div class="mb-3">
+                    {% include 'components/post_long.html' %}
+                </div>
             {% endfor %}
         </div>
 

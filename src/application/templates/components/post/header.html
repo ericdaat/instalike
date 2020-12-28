@@ -1,0 +1,13 @@
+<div class="media">
+    <img class="align-self-center mr-3 rounded-circle"
+        src="{{ post.user.avatar }}"
+        height="30px">
+
+    <div class="media-body">
+        <p class="mb-0">
+            <a href="{{ url_for('user.user', username=post.user.username) }}">
+                {{ post.user.username }}
+            </a>
+        </p>
+    </div>
+</div>
