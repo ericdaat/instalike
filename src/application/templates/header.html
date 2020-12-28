@@ -5,10 +5,44 @@
         </span>
 
         <span class="navbar-text">
-            <i class="fas fa-home fa-lg"></i>
-            <i class="fas fa-paper-plane fa-lg"></i>
-            <i class="fas fa-compass fa-lg"></i>
-            <i class="fas fa-heart fa-lg"></i>
+            <ul class="nav nav-pills">
+
+                <!-- home -->
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="{{ url_for('home.index') }}" >
+                      <i class="fas fa-home fa-lg"></i>
+                   </a>
+                </li>
+
+                <!-- inbox -->
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                      <i class="fas fa-paper-plane fa-lg"></i>
+                   </a>
+                </li>
+
+                <!-- explore -->
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                      <i class="fas fa-compass fa-lg"></i>
+                  </a>
+                </li>
+
+                <!-- notifications -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown"
+                       href="#" role="button" aria-haspopup="true"
+                       aria-expanded="false">
+                        <i class="fas fa-heart fa-lg"></i>
+                    </a>
+
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#">
+                        <i class="fas fa-heart fa-sm"></i> A notification !</a>
+                    </div>
+                </li>
+
+            </ul>
         </span>
     </div>
 </nav>
