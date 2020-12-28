@@ -1,15 +1,25 @@
+/* Global theme */
+body {
+    font: 1rem/1.5 var(--font-family-sans-serif);
+}
+
+a {
+    color: var(--danger);
+}
+
+/* Modal customization */
 .modal {
     padding: 0 !important;
-  }
+}
 
 .modal .modal-dialog {
     width: 80%;
     max-width: none;
-    height: 80%;
+    height: 95%;
 }
 
 .modal .modal-content {
-    height: 80%;
+    height: 95%;
 }
 
 .modal .modal-body {

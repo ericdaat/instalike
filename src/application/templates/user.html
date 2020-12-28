@@ -79,6 +79,7 @@
 
                 <div class="tab-pane fade" id="list"
                     role="tabpanel" aria-labelledby="list-tab">
+
                     <div class="row justify-content-md-center">
                         <div class="col-8">
                             {% for post in user.posts %}
@@ -88,19 +89,18 @@
                             {% endfor %}
                         </div>
                     </div>
+
                 </div>
 
                 <div class="tab-pane fade" id="likes"
                     role="tabpanel" aria-labelledby="likes-tab">
-                    <div class="row justify-content-md-center">
-                        <div class="col-8">
-                            {% for post in user.likes %}
-                                <div class="mb-3">
-                                    {% include 'components/post_long.html' %}
-                                </div>
-                            {% endfor %}
-                        </div>
+
+                    <div class="card-columns">
+                        {% for post in user.likes %}
+                            {% include "components/post_picture_only.html" %}
+                        {% endfor %}
                     </div>
+
                 </div>
 
             </div>
