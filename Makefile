@@ -11,6 +11,10 @@ init:
 	FLASK_DEBUG=True \
 	flask init-db;
 
+test:
+	. venv/bin/activate; \
+	pytest tests;
+
 start:
 	. venv/bin/activate; \
 	FLASK_APP="src.application.app" \
