@@ -9,6 +9,11 @@ bp = flask.Blueprint("home", __name__)
 
 @bp.route("/")
 def index():
+    """Home page, displays the feed.
+
+    Returns:
+        [str]: Flask template, as HTML string
+    """
     user = db.session\
         .query(User)\
         .first()

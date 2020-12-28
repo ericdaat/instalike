@@ -2,6 +2,10 @@ from .model import db, User, Post, Comments
 
 
 def init_db():
+    """ Initializes the database.
+    Drop all the existing tables and create new ones.
+    Then insert dummy data to get started with the application.
+    """
     ###############
     # Init tables #
     ###############

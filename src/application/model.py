@@ -1,4 +1,7 @@
-import uuid
+""" The database model declaration goes here.
+We use SQL Alchemy as ORM.
+"""
+
 from datetime import datetime
 from flask.helpers import total_seconds
 

@@ -1,3 +1,7 @@
+""" Flask app configuration goes here.
+This will be loaded at startup.
+"""
+
 import os
 
 

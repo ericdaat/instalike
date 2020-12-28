@@ -12,6 +12,7 @@ def create_app(config=None):
     """ Flask app factory that creates and configure the app.
     Args:
         test_config (str): python configuration filepath
+
     Returns: Flask application
     """
     app = Flask(__name__)
