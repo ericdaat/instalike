@@ -8,7 +8,7 @@ from . import jinja_filters
 from .model import db, session
 
 
-def create_app(config):
+def create_app(config=None):
     """ Flask app factory that creates and configure the app.
     Args:
         test_config (str): python configuration filepath
