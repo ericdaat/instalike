@@ -1,0 +1,56 @@
+{% include "components/modal_likes.html" %}
+
+<div class="card rounded-sm mb-3">
+
+    <div class="card-header bg-white">
+        <div class="media">
+            <img class="align-self-center mr-3 rounded-circle"
+                src="{{ post.user.avatar }}"
+                height="30px">
+
+            <div class="media-body">
+                <p class="mb-0">
+                    <a href="{{ url_for('user.user', username=post.user.username) }}">
+                        {{ post.user.username }}
+                    </a>
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <img class="card-img rounded-0"
+            src="{{ post.picture }}"
+            alt="Card image cap">
+
+    <div class="card-body">
+        <p>
+            <a data-toggle="modal" data-target="#modalLikes{{post.id}}">
+                {{ post.likes | length }} likes
+            </a>
+        </p>
+
+        <p>
+            <i class="fas fa-heart fa-lg"></i>
+            <i class="fas fa-comment-alt fa-lg"></i>
+            <i class="fas fa-paper-plane fa-lg"></i>
+        </p>
+
+        <p class="card-text mt-3">
+            <a href="{{ url_for('user.user', username=post.user.username) }}">
+                {{ post.user.username }}
+            </a>
+            {{ post.content }}
+        </p>
+        {% for comment in post.comments %}
+            <a href="{{ url_for('user.user', username=comment.user.username) }}">
+                {{ comment.user.username }}
+            </a>
+            {{ comment.content }}
+        {% endfor %}
+    </div>
+
+    <div class="card-footer bg-white">
+        <small class="text-muted">Posted on {{ post.created_at | datetime}}</small>
+    </div>
+</div>

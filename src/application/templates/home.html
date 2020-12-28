@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %} Home {% endblock %}
+
+{% block body %}
+
+<div class="container pt-5">
+
+    <div class="row">
+
+        <div class="col-8">
+            {% for post in posts %}
+                {% include 'components/post.html' %}
+            {% endfor %}
+        </div>
+
+        <div class="col">
+            <div class="media">
+                <img class="align-self-center mr-3 rounded-circle"
+                    src="{{ user.avatar }}"
+                    height="75">
+
+                <div class="media-body">
+                    <h5 class="mb-0">
+                        <a href="{{ url_for('user.user', username=user.username) }}">
+                            {{ user.username }}
+                        </a>
+                    </h5>
+                    <p class="mb-0">{{ user.fullname }}</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
