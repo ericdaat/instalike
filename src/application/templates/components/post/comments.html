@@ -1,13 +1,20 @@
 <p class="card-text my-1">
-    <a href="{{ url_for('user.user', username=post.user.username) }}">
-        {{ post.user.username }}
-    </a>
-    {{ post.content }}
-</p>
 
-{% for comment in post.comments %}
-    <a href="{{ url_for('user.user', username=comment.user.username) }}">
-        {{ comment.user.username }}
-    </a>
-    {{ comment.content }}
-{% endfor %}
+    <ul class="list-unstyled">
+        <li>
+            <a href="{{ url_for('user.user', username=post.user.username) }}">
+                {{ post.user.username }}
+            </a>
+            {{ post.content }}
+        </li>
+        {% for comment in post.comments %}
+            <li class="">
+                <a href="{{ url_for('user.user', username=comment.user.username) }}">
+                    {{ comment.user.username }}
+                </a>
+                {{ comment.content }}
+            </li>
+        {% endfor %}
+    </ul>
+
+</p>
