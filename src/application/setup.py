@@ -36,9 +36,9 @@ def init_db(n_users=10, max_posts_per_user=10,
         u = User(
             username=username,
             email="{0}@example.com".format(username),
-            fullname="{0} Awesome".format(username.title()),
+            fullname="{0}".format(username.title()),
             bio="Hi! I'm {0}.".format(firstname.title()),
-            avatar="https://eu.ui-avatars.com/api/?size=300&name={0}+Awesome"\
+            avatar="https://eu.ui-avatars.com/api/?size=300&name={0}"\
                    .format(firstname.title())
         )
 
@@ -56,7 +56,7 @@ def init_db(n_users=10, max_posts_per_user=10,
         for post_index in range(np.random.randint(0, max_posts_per_user)):
             p = Post(
                 user_id=user.id,
-                content="Post description.",
+                content="Here's my post!",
                 picture="https://picsum.photos/seed/{0}-{1}/600"\
                         .format(user.username, str(post_index))
             )
@@ -73,6 +73,8 @@ def init_db(n_users=10, max_posts_per_user=10,
         n_posts_to_like = np.random.randint(0, max_likes_per_user)
 
         for post in np.random.choice(posts, n_posts_to_like):
+            if post.user == user:
+                continue
             user.likes.append(post)
 
     ################
@@ -82,6 +84,8 @@ def init_db(n_users=10, max_posts_per_user=10,
         n_posts_to_comment = np.random.randint(0, max_comments_per_user)
 
         for post in np.random.choice(posts, n_posts_to_comment):
+            if post.user == user:
+                continue
             c = Comments(user=user, content="love it!")
             post.comments.append(c)
 
